@@ -1,10 +1,35 @@
 PODS:
-  - Moya-ErrorObjectMapper (0.1.0)
+  - Alamofire (4.5.0)
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
+  - Moya-ErrorObjectMapper/Core (0.1.0):
+    - Moya-ObjectMapper (~> 2.3.2)
+  - Moya-ErrorObjectMapper/RxSwift (0.1.0):
+    - Moya-ErrorObjectMapper/Core
+    - Moya-ObjectMapper/RxSwift (~> 2.3.2)
+  - Moya-ObjectMapper (2.3.2):
+    - Moya-ObjectMapper/Core (= 2.3.2)
+  - Moya-ObjectMapper/Core (2.3.2):
+    - Moya (~> 8.0)
+    - ObjectMapper (~> 2.2)
+  - Moya-ObjectMapper/RxSwift (2.3.2):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (~> 3.1)
+  - Moya/Core (8.0.5):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.5):
+    - Moya/Core
+    - RxSwift (~> 3.0)
   - Nimble (5.1.1)
+  - ObjectMapper (2.2.8)
   - Quick (1.0.0)
+  - Result (3.2.3)
+  - RxSwift (3.6.1)
 
 DEPENDENCIES:
-  - Moya-ErrorObjectMapper (from `../`)
+  - Moya-ErrorObjectMapper/RxSwift (from `../`)
   - Nimble (~> 5.1.1)
   - Quick (~> 1.0.0)
 
@@ -13,10 +38,16 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Moya-ErrorObjectMapper: b2bff620c7a7e8a106fe9313d1bd69215456853c
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
+  Moya-ErrorObjectMapper: 822c8be417806a5359547991f36d5397aae9a2ea
+  Moya-ObjectMapper: 1b05f10bb69fb6c8750d497d2974c1c63c08c3a9
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
-PODFILE CHECKSUM: b9630a8a4a72c522b37d2ee32b7f14b045932b55
+PODFILE CHECKSUM: 26dbdee28546387f65b754059f55e006b9a0d766
 
 COCOAPODS: 1.3.1

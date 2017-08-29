@@ -2,7 +2,7 @@
 
 import Quick
 import Nimble
-import Moya-ErrorObjectMapper
+import Moya_ErrorObjectMapper
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {

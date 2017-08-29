@@ -1,9 +1,12 @@
 use_frameworks!
 
-target 'Moya-ErrorObjectMapper_Example' do
-  pod 'Moya-ErrorObjectMapper', :path => '../'
+# ignore all warnings from all pods
+inhibit_all_warnings!
 
-  target 'Moya-ErrorObjectMapper_Tests' do
+target 'Moya_ErrorObjectMapper_Example' do
+  pod 'Moya-ErrorObjectMapper/RxSwift', :path => '../'
+
+  target 'Moya_ErrorObjectMapper_Tests' do
     inherit! :search_paths
 
     pod 'Quick', '~> 1.0.0'

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Moya-ErrorObjectMapper.xcodeproj">
+      location = "group:/Users/levibostian/code/Moya-ErrorObjectMapper/Example/Moya_ErrorObjectMapper.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

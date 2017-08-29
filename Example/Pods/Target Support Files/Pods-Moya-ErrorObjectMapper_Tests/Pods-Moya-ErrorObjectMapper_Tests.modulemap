@@ -1,6 +1,0 @@
-framework module Pods_Moya_ErrorObjectMapper_Tests {
-  umbrella header "Pods-Moya-ErrorObjectMapper_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,42 +1,29 @@
-#
-# Be sure to run `pod lib lint Moya-ErrorObjectMapper.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'Moya-ErrorObjectMapper'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Moya-ErrorObjectMapper.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'ObjectMapper bindings when Moya encounters a status code error.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+When Moya throws a status code MoyaError indicating that the API server returned an invalid status code, use Moya-ErrorObjectMapper to get error message from JSON body of error response.
                        DESC
 
-  s.homepage         = 'https://github.com/Levi Bostian/Moya-ErrorObjectMapper'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/levibostian/Moya-ErrorObjectMapper'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Levi Bostian' => 'levi.bostian@gmail.com' }
   s.source           = { :git => 'https://github.com/Levi Bostian/Moya-ErrorObjectMapper.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.social_media_url = 'https://twitter.com/levibostian'
   s.ios.deployment_target = '8.0'
+  s.default_subspec = "Core"
+  s.framework = "Foundation"
+    
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Moya-ErrorObjectMapper/Classes/Core/**/*.swift"
+    ss.dependency "Moya-ObjectMapper", '~> 2.3.2'
+  end
 
-  s.source_files = 'Moya-ErrorObjectMapper/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Moya-ErrorObjectMapper' => ['Moya-ErrorObjectMapper/Assets/*.png']
-  # }
+  s.subspec "RxSwift" do |ss|
+    ss.source_files = "Moya-ErrorObjectMapper/Classes/RxSwift/**/*.swift"
+    ss.dependency "Moya-ObjectMapper/RxSwift", '~> 2.3.2'
+    ss.dependency "Moya-ErrorObjectMapper/Core"
+  end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

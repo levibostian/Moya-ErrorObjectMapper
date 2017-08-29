@@ -1,9 +1,9 @@
 {
   "name": "Moya-ErrorObjectMapper",
   "version": "0.1.0",
-  "summary": "A short description of Moya-ErrorObjectMapper.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Levi Bostian/Moya-ErrorObjectMapper",
+  "summary": "ObjectMapper bindings when Moya encounters a status code error.",
+  "description": "When Moya throws a status code MoyaError indicating that the API server returned an invalid status code, use Moya-ErrorObjectMapper to get error message from JSON body of error response.",
+  "homepage": "https://github.com/levibostian/Moya-ErrorObjectMapper",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -15,8 +15,33 @@
     "git": "https://github.com/Levi Bostian/Moya-ErrorObjectMapper.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/levibostian",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Moya-ErrorObjectMapper/Classes/**/*"
+  "default_subspecs": "Core",
+  "frameworks": "Foundation",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Moya-ErrorObjectMapper/Classes/Core/**/*.swift",
+      "dependencies": {
+        "Moya-ObjectMapper": [
+          "~> 2.3.2"
+        ]
+      }
+    },
+    {
+      "name": "RxSwift",
+      "source_files": "Moya-ErrorObjectMapper/Classes/RxSwift/**/*.swift",
+      "dependencies": {
+        "Moya-ObjectMapper/RxSwift": [
+          "~> 2.3.2"
+        ],
+        "Moya-ErrorObjectMapper/Core": [
+
+        ]
+      }
+    }
+  ]
 }
