@@ -1,0 +1,6 @@
+framework module Moya_ErrorObjectMapper {
+  umbrella header "Moya-ErrorObjectMapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

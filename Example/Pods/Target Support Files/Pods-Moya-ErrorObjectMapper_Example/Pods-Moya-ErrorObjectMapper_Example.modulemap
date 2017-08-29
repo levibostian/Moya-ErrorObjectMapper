@@ -1,0 +1,6 @@
+framework module Pods_Moya_ErrorObjectMapper_Example {
+  umbrella header "Pods-Moya-ErrorObjectMapper_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
